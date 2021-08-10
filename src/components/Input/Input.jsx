@@ -7,12 +7,16 @@ const Input = () => {
 
   const handleChange = (value) => {
     body.style.backgroundColor = `hsl(248, 22%, ${value}%)`;
+    document.documentElement.style.setProperty(
+      "--colorPorcentage",
+      `${value * 2}%`
+    );
   };
 
   return (
     <input
       type="range"
-      min="7"
+      min="0"
       max="50"
       defaultValue="0"
       onChange={(e) => handleChange(e.target.value)}
